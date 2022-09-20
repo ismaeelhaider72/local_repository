@@ -10,7 +10,7 @@ pipeline {
                     pip3 install -r requirements.txt
                     export STACK_NAME="Transunion-SFTP"
                     export HOME_DIRECTORY="dealeron-sftp-1"
-                    export username="gmariduena1"
+                    export username="gmariduena2"
                     pwd
                     python3 main.py
                 '''
