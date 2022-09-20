@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 sh 'ls'
-                sh 'pip3 install boto3'
+                sh 'pip3 install -r requirements.txt'
             }
         }
 
