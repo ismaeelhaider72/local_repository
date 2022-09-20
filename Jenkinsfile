@@ -7,8 +7,22 @@ pipeline {
                 echo 'Hello World'
                 sh 'ls'
                 sh 'pip3 install boto3'
-                sh 'python3 main.py'
             }
         }
+
+    stage('building jekyll') {
+        steps {
+            script {
+                sh script:'''
+                    #!/bin/bash
+                    export STACK_NAME="Transunion-SFTP"
+                    export HOME_DIRECTORY="dealeron-sftp-1"
+                    export username=="gmariduena"
+                    python3 main.py
+                    '''
+            }
+        }
+    }
+
     }
 }
