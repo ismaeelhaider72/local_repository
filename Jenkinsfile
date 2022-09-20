@@ -18,7 +18,8 @@ pipeline {
                     export STACK_NAME="Transunion-SFTP"
                     export HOME_DIRECTORY="dealeron-sftp-1"
                     export username=="gmariduena"
-                    python3 main.py
+                    python3 --version
+                    python3.7 main.py
                     '''
             }
         }
