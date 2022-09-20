@@ -5,9 +5,9 @@ import json
 import secrets
 
 s3_client     = boto3.client('s3')
-cfn_client    = boto3.client('cloudformation')
-iam_client    = boto3.client('iam')
-account_id    = boto3.client('sts').get_caller_identity().get('Account')
+cfn_client    = boto3.client('cloudformation',region_name='us-east-1')
+iam_client    = boto3.client('iam',region_name='us-east-1')
+#account_id    = boto3.client('sts',region_name='us-east-1').get_caller_identity().get('Account')
 secret_client = boto3.client('secretsmanager',region_name = 'us-east-1')
 
 
@@ -133,7 +133,7 @@ def create_secret(username,bucket,role_name,server):
     secret_string = '{"HomeDirectory": "/{bucket}", "Password": "{password}","Role":"arn:aws:iam::{account_id}:role/{role_name}"}'\
         .replace('{bucket}',bucket)\
         .replace('{password}',password)\
-        .replace('{account_id}',account_id)\
+        .replace('{account_id}','account_id')\
         .replace('{role_name}',role_name)
 
     resp = secret_client.create_secret(
@@ -214,4 +214,3 @@ if __name__ == "__main__":
     # print(check_if_policy_exists(account_id=account_id,username=USERNAME))
     # print(check_if_secret_exists(USERNAME))
     # print(fetch_policy(account_id,USERNAME))
-
