@@ -5,13 +5,11 @@ pipeline {
             steps {
                 sh '''
                     echo "Multiline shell steps works too"
-                    pwd
                     ls -lah
                     pip3 install -r requirements.txt
                     export STACK_NAME="Transunion-SFTP"
                     export HOME_DIRECTORY="dealeron-sftp-1"
-                    export username="gmariduena3"
-                    pwd
+                    export username="gmariduena4"
                     python3 main.py
                 '''
             }
