@@ -15,6 +15,9 @@ pipeline {
                     export STACK_NAME=$params.STACK_NAME
                     export HOME_DIRECTORY=$params.HOME_DIRECTORY
                     export username=$params.username
+                    echo $STACK_NAME
+                    echo $HOME_DIRECTORY 
+                    echo $username 
                     python3 main.py
                 '''
             }
