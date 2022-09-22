@@ -18,6 +18,9 @@ pipeline {
                     echo $STACK_NAME
                     echo $HOME_DIRECTORY 
                     echo $username 
+                    echo $params.STACK_NAME
+                    echo $params.HOME_DIRECTORY
+                    echo $params.username
                     python3 main.py
                 '''
             }
