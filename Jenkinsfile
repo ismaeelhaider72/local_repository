@@ -1,9 +1,9 @@
 pipeline {
     agent any
     parameters {
-        string(name: "STACK_NAME")
-        string(name: "HOME_DIRECTORY")
-        string(name: "username")
+        string(name: "STACK_NAME", defaultValue: "Transunion-SFTP", trim: true, description: "Sample string parameter")
+        string(name: "HOME_DIRECTORY", defaultValue: "dealeron-sftp-1", trim: true, description: "Sample string parameter")
+        string(name: "username", defaultValue: "gmariduena4", trim: true, description: "Sample string parameter")
     } 
     stages {
         stage('testing') {
@@ -19,8 +19,8 @@ pipeline {
                     echo $HOME_DIRECTORY 
                     echo $username 
                     echo $params.STACK_NAME
-                    echo $params.HOME_DIRECTORY
-                    echo $params.username
+                    echo "$params.HOME_DIRECTORY"
+                    echo "$params.username"
                     python3 main.py
                 '''
             }
