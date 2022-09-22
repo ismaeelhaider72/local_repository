@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('testing') {
             steps {
-                sh '''
+                sh """
                     echo "Multiline shell steps works too"
                     ls -lah
                     pip3 install -r requirements.txt
@@ -22,7 +22,7 @@ pipeline {
                     echo "$params.HOME_DIRECTORY"
                     echo "$params.username"
                     python3 main.py
-                '''
+                """
             }
         }
     }
