@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters {
-        string(name: "STACK_NAME", defaultValue: "Transunion-SFTP", trim: true, description: "Sample string parameter")
-        string(name: "HOME_DIRECTORY", defaultValue: "dealeron-sftp-1", trim: true, description: "Sample string parameter")
+        string(name: "STACK_NAME", defaultValue: "Transunion-SFTP", trim: true)
+        string(name: "HOME_DIRECTORY", defaultValue: "dealeron-sftp-1", trim: true)
         string(name: "username", defaultValue: "gmariduena4", trim: true, description: "Sample string parameter")
     } 
     stages {
