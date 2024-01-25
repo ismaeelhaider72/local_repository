@@ -7,7 +7,7 @@ SERVER_NAME = 'dealeron'
 STACK_NAME     = 'bitpolicy'
 HOME_DIRECTORY = 'dealerons-sftp'
 SECRET         = 'SFTP-Dealeron/'
-USERNAME       = 'nomanikram'
+USERNAME       = 'daniyal'
 
 s3_client     = boto3.client('s3')
 cfn_client    = boto3.client('cloudformation')
