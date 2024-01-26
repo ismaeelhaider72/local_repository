@@ -9,7 +9,7 @@ pipeline {
         stage('testing') {
             steps {
                 sh """
-                    echo "this is 18th change"
+                    echo "this is 19th change"
                     echo "Multiline shell steps works too"
                     ls -lah
                     pip3 install -r requirements.txt
