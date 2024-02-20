@@ -11,6 +11,7 @@ pipeline {
                 sh """
                     echo "this is 8th change"
                     echo "Multiline shell steps works too each day"
+                    echo "this is new feature"
                     ls -lah
                     pip3 install -r requirements.txt
                     export STACK_NAME=$params.STACK_NAME
